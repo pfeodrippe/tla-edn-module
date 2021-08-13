@@ -1,4 +1,4 @@
-image:https://img.shields.io/clojars/v/pfeodrippe/tla-edn-module.svg[link="http://clojars.org/pfeodrippe/tla-edn-module",title="Clojars Project"]
+image:https://img.shields.io/clojars/v/io.github.pfeodrippe/tla-edn-module.svg[link="http://clojars.org/io.github.pfeodrippe/tla-edn-module",title="Clojars Project"]
 
 = TLA EDN Module
 
