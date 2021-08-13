@@ -6,4 +6,4 @@
  :deps
  {pfeodrippe/tla-edn {:mvn/version "0.6.0-SNAPSHOT"}}
 
- :paths ["src" "resources"]}
+ :paths ["src" "resources" "classes"]}

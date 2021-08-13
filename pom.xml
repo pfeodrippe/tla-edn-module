@@ -4,7 +4,7 @@
   <packaging>jar</packaging>
   <groupId>io.github.pfeodrippe</groupId>
   <artifactId>tla-edn-module</artifactId>
-  <version>0.1.0</version>
+  <version>0.2.0-SNAPSHOT</version>
   <name>tla-edn-module</name>
   <dependencies>
     <dependency>

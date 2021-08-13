@@ -1,8 +1,10 @@
 (ns tla-edn-module.core
+  (:gen-class)
   (:require
    [clojure.edn :as edn]
    [tla-edn.core :as tla-edn]
-   [tla-edn.spec :as spec]))
+   [tla-edn.spec :as spec]
+   [clojure.string :as str]))
 
 (spec/defop serialize {:module "Edn" :identifier "EdnSerialize"}
   [path value]
@@ -16,6 +18,9 @@
 (spec/defop ToEdn {:module "Edn" :identifier "ToEdn"}
   [value]
   (tla-edn/to-tla-value (pr-str (tla-edn/to-edn value))))
+
+(defn main-
+  [])
 
 (comment
 
