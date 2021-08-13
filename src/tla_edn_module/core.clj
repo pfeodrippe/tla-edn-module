@@ -3,8 +3,7 @@
   (:require
    [clojure.edn :as edn]
    [tla-edn.core :as tla-edn]
-   [tla-edn.spec :as spec]
-   [clojure.string :as str]))
+   [tla-edn.spec :as spec]))
 
 (spec/defop serialize {:module "Edn" :identifier "EdnSerialize"}
   [path value]
@@ -19,8 +18,15 @@
   [value]
   (tla-edn/to-tla-value (pr-str (tla-edn/to-edn value))))
 
-(defn main-
-  [])
+(gen-class
+ :name TlaEdnModule.Overrides
+ :implements [tlc2.overrides.ITLCOverrides]
+ :prefix "impl-"
+ :main false)
+
+(defn impl-get
+  [_this]
+  (into-array Class (map resolve (or (keys @spec/classes-to-be-loaded) []))))
 
 (comment
 
