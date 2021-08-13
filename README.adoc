@@ -1,0 +1,7 @@
+image:https://img.shields.io/clojars/v/pfeodrippe/tla-edn-module.svg[link="http://clojars.org/pfeodrippe/tla-edn-module",title="Clojars Project"]
+
+= TLA EDN Module
+
+A TLA+ module to interact with EDN.
+
+See `Edn.tla` file.
