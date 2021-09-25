@@ -5,3 +5,33 @@ image:https://img.shields.io/clojars/v/io.github.pfeodrippe/tla-edn-module.svg[l
 A TLA+ module to interact with EDN.
 
 See `Edn.tla` file.
+
+== Installation and Usage
+You can install https://github.com/pfeodrippe/tladeps#installation[TLA Deps]
+and use it the same way you run TLC from the command line (with some extra 
+params).
+
+Example (for a `Abc` module), run
+----
+tladeps --tladeps-dep edn tlc2.TLC Abc.tla -config Abc.tla
+----
+
+This will automatically pull this EDN module and you can use in your 
+module, see example below
+----
+-------------------------------- MODULE Abc --------------------------------
+
+EXTENDS Edn, Integers, Sequences, TLC, TLCExt
+
+ASSUME(AssertEq(ToEdn({3, 2, 1}), "#{1 3 2}"))
+ASSUME(AssertEq(ToEdn([a |-> TRUE, b |-> FALSE]), "{\"a\" true, \"b\" false}"))
+
+RoundTrip ==
+    LET output == <<[a |-> 3], 2, <<<<1, 2>>, "look">>, <<<<<<[b |-> [c |-> <<4, 5, 6>>]]>>>>>>>>
+    IN
+       /\ EdnSerialize("test.edn", output)
+       /\ output = EdnDeserialize("test.edn")
+ASSUME(RoundTrip)
+
+=============================================================================
+----
