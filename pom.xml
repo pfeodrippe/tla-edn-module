@@ -4,7 +4,6 @@
   <packaging>jar</packaging>
   <groupId>io.github.pfeodrippe</groupId>
   <artifactId>tladeps-edn-module</artifactId>
-  <url>https://raw.githubusercontent.com/pfeodrippe/tla-edn-module/master/tladeps.edn</url>
   <version>0.4.0</version>
   <name>tla-edn-module</name>
   <dependencies>
